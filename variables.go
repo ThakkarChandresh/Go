@@ -55,4 +55,10 @@ func main() {
 
 	// using reflect package for runtime inspections
 	fmt.Println(reflect.TypeOf(married))
+
+	demo := "yash" //var demo = "y
+
+	demo, demo2 := "mihir", "nikunj"
+
+	fmt.Println(demo, " ", demo2)
 }

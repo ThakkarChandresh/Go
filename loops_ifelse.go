@@ -28,31 +28,6 @@ func main() {
 		fmt.Println("My name is Ayush")
 	}
 
-	// switch case
-
-	var colour string
-
-	fmt.Scanln("Enter any colour : ", &colour)
-
-	switch colour {
-
-	case "red":
-		fmt.Println("Switch : red")
-
-	case "blue":
-		fmt.Println("Switch : blue")
-		fallthrough
-
-	case "green":
-		fmt.Println("Switch : green")
-
-	case "white":
-		fmt.Println("Switch :white")
-
-	default:
-		fmt.Println("Switch default : black")
-	}
-
 	x := 1
 
 	for x <= 10 {
@@ -73,7 +48,11 @@ func main() {
 	fmt.Println("Printing colours slice using for loop")
 
 	colours := []string{"red", "green", "blue", "white"}
-	prac(colours[0:1])
+
+	colours1 := colours[0:1]
+
+	prac(colours1)
+
 	for colour := range colours {
 		fmt.Println(colour)
 	}
@@ -99,7 +78,14 @@ func prac(colours []string) {
 	fmt.Println(colours)
 	fmt.Println("Length:", len(colours))
 
-	collar := append(colours, "smart", "yash", "mihir")
+	collar := make([]string, len(colours))
+
+	for index := range collar {
+
+		collar[index] = colours[index]
+	}
+
+	collar = append(collar, "smart", "yash", "mihir")
 
 	for col := range collar {
 		fmt.Println("color:", collar[col])
