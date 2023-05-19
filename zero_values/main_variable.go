@@ -20,7 +20,7 @@ func main() {
 	// The zero-value mechanism of Go ensures that a variable always holds a well defined value of its type
 	var value int                         // initialized with 0
 	var price float64                     // initialized with 0.0??
-	var name string                       // initialized with empty string -> ""
+	var name string                       // initialized with empty string_basics -> ""
 	var done bool                         // initialized with false
 	fmt.Println(value, price, name, done) // -> 0 0.0 ""  false
 }

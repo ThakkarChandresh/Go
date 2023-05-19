@@ -18,7 +18,7 @@ var name = "John Wick" // inline comment
 
 // use short, concise names especially in shorter scopes
 // common names for common types:
-var s string   //string
+var s string   //string_basics
 var i int      //index
 var num int    //number
 var msg string //message

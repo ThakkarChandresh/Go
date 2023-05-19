@@ -52,9 +52,9 @@ func main() {
 	var b bool = true
 	fmt.Printf("%T\n", b) // => bool
 
-	//string type
+	//string_basics type
 	var s string = "Hello Go!"
-	fmt.Printf("%T\n", s) // => string
+	fmt.Printf("%T\n", s) // => string_basics
 
 	//array type
 	var numbers = [4]int{4, 5, -9, 100}
@@ -62,14 +62,14 @@ func main() {
 
 	//slice type
 	var cities = []string{"London", "Bucharest", "Tokyo", "New York"}
-	fmt.Printf("%T\n", cities) // => []string
+	fmt.Printf("%T\n", cities) // => []string_basics
 
 	//map type
 	balances := map[string]float64{
 		"USD": 233.11,
 		"EUR": 555.11,
 	}
-	fmt.Printf("%T\n", balances) // => map[string]float64
+	fmt.Printf("%T\n", balances) // => map[string_basics]float64
 
 	//struct type
 	type Person struct {

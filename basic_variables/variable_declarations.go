@@ -14,11 +14,11 @@ func main() {
 	// Syntax: var var_name type
 	var s1 string
 	s1 = "Learning Go!"
-	fmt.Println(s1) // printing string s1
+	fmt.Println(s1) // printing string_basics s1
 
 	//** TYPE INFERENCE **//
 
-	// Go deduces automatically the type of the variable by looking at the initial value (bool, int, string etc)
+	// Go deduces automatically the type of the variable by looking at the initial value (bool, int, string_basics etc)
 
 	var k int = 6 // not necessary to say the type (int). It is inferred from the literal on the right side of =
 	var i = 5     // type int
@@ -29,7 +29,7 @@ func main() {
 
 	// ii == jj  // -> error: cannot assign float to int (Go is a strong typed language)
 
-	// declaring and initializing a new variable of type string (type inference)
+	// declaring and initializing a new variable of type string_basics (type inference)
 	var s2 = "Go!"
 	_ = s2 //in Go each variable must be used or there is a compile-time error
 	// _ is the Blank Identifier and mutes the error of unused variables
