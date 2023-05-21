@@ -21,6 +21,12 @@ func main() {
 	//how to get actual number of characters
 	//here casting to array of 'rune' datatype will help
 	//prints 5
+	fmt.Printf("Actual string in bytes: %v\n", []byte(name))
+	fmt.Printf("Actual string in runes: %v\n", []rune(name))
 	fmt.Println("Actual characters no: ", len([]rune(name)))
+
+	s := "Hello World"
+	t := s
+	fmt.Println(s, t)
 
 }

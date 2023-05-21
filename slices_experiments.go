@@ -22,6 +22,17 @@ func main() {
 	a, b := add()
 	fmt.Println("Add: ", a, b)
 
+	var slice1 = []int{1, 2}
+	slice2 := slice1
+
+	//both are different slice descriptors
+	fmt.Printf("Slice1: %p\n", &slice1)
+	fmt.Printf("Slice2: %p\n", &slice2)
+
+	//but have same array pointed underneath
+	fmt.Printf("Slice1: %p\n", &slice1[0])
+	fmt.Printf("Slice2: %p\n", &slice2[0])
+
 	var emptySlice []string
 	for i := 0; i < 5; i++ {
 		emptySlice = append(emptySlice, "A")
