@@ -29,4 +29,10 @@ func main() {
 	t := s
 	fmt.Println(s, t)
 
+	//%v prints ascii values
+	s1 := "AGolang"
+	for i := 0; i < len(s1); i++ {
+		fmt.Printf("%v", s1[i])
+	}
+
 }

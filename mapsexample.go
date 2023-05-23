@@ -83,4 +83,9 @@ func main() {
 		return mapPairs[i].val > mapPairs[j].val
 	})
 	fmt.Println("Array of pairs sorted decreasing by value: ", mapPairs)
+
+	var n uint = 10
+	var s = int(n)
+	fmt.Println(s)
+
 }
