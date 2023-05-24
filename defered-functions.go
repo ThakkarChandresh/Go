@@ -27,8 +27,4 @@ func main() {
 	output()
 	defer second()
 
-	fmt.Printf("y is %d", 5.6)
-
-	fmt.Printf("y is %f", 5)
-
 }

@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"reflect"
 	"unsafe"
 )
 
@@ -58,7 +59,17 @@ func main() {
 
 	fmt.Println("After copying by value array 3 = ", array3)
 
+	//floatArray := []float64{20.5, 10, 60.6, 8, 100.0000}
+
+	// unsafe pointers is array
+
 	test(unsafe.Pointer(&arr[0]))
+
+	numbers1 := [5]int{1, 2, 3, 4, 5}
+
+	numbers2 := [5]int{1, 2, 3, 4, 5}
+
+	compareArrays(numbers1, numbers2)
 
 }
 
@@ -73,5 +84,24 @@ func passByReference(array *[5]int) {
 }
 
 func test(ptr unsafe.Pointer) {
-	fmt.Println(*(*int)(unsafe.Pointer(uintptr(ptr) + 8)))
+	fmt.Println(*(*int)(unsafe.Pointer(uintptr(ptr) + 16)))
+}
+
+func compareArrays(array1 [5]int, array2 [5]int) {
+
+	value1 := reflect.ValueOf(array1)
+
+	value2 := reflect.ValueOf(array2)
+
+	if value1.Len() != value2.Len() {
+		fmt.Println("Both types are not equal")
+	} else {
+
+		if array1 == array2 {
+			fmt.Println("Both arrays are equal")
+		} else {
+			fmt.Println("Both arrays are not equal")
+		}
+	}
+
 }

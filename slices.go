@@ -38,6 +38,16 @@ func main() {
 
 	fmt.Println(itemExists(fruits, "mango"))
 
+	slice1 := []int{10, 20, 30, 40, 50}
+	slice2 := []int{10, 20, 30, 40, 50}
+
+	stringSlice := []string{"yash", "mihir", "dhaval"}
+	stringSlice2 := []string{"yash", "mihir", "dhava"}
+
+	compareSlice(slice1, slice2)
+
+	compareSlice(stringSlice, stringSlice2)
+
 }
 
 func printSlice(s []int) {
@@ -58,4 +68,35 @@ func itemExists(slice interface{}, item interface{}) bool {
 	}
 
 	return false
+}
+
+func compareSlice(slice1 interface{}, slice2 interface{}) {
+
+	value1 := reflect.ValueOf(slice1)
+
+	value2 := reflect.ValueOf(slice2)
+
+	if value1.Kind() != value2.Kind() {
+		panic("Invalid type")
+	}
+
+	if value1.Len() != value2.Len() {
+		fmt.Println("Both slices are not equal")
+	} else {
+		equal := false
+
+		for i := 0; i < value1.Len(); i++ {
+			if value1.Index(i).Equal(value2.Index(i)) {
+				equal = true
+			} else {
+				equal = false
+			}
+		}
+
+		if equal {
+			fmt.Println("Both slices are equal")
+		} else {
+			fmt.Println("Both slices are not equal")
+		}
+	}
 }
