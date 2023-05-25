@@ -86,9 +86,9 @@ func main() {
 	fmt.Printf("ptr is of type %T with value %v\n", ptr, ptr) // => ptr is of type *int with value 0xc000016168
 
 	//function type
-	fmt.Printf("%T\n", f) // => func()
+	fmt.Printf("%T\n", ff) // => func()
 
 }
 
-func f() {
+func ff() {
 }

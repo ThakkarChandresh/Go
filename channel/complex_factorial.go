@@ -24,21 +24,22 @@ func main() {
 	//defer wg.Wait() //Writing wait in defer will never work as it executes after return!!
 
 	wg.Add(2)
-	c := make(chan int)
+	c := make(chan int, 100)
+	defer close(c)
 
 	go func() {
-		for i := 1; i < 6; i++ {
-			go fact(i, c)
-			fmt.Println("In First", <-c)
-		}
+
+		go fact(1, c)
+		fmt.Println("In First", <-c)
+
 		wg.Done()
 	}()
 
 	go func() {
-		for i := 6; i < 11; i++ {
-			go fact(i, c)
-			fmt.Println("In Second", <-c)
-		}
+
+		go fact(1000000, c)
+		fmt.Println("In Second", <-c)
+
 		wg.Done()
 	}()
 	fmt.Println(runtime.NumGoroutine())
